@@ -1,65 +1,165 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pulmon Vital</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #f4f8fb;
-            color: #333;
-        }
-        header {
-            background: #2b7a78;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        section {
-            padding: 20px;
-            max-width: 800px;
-            margin: auto;
-        }
-        footer {
-            background: #17252a;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-        h1, h2 {
-            margin: 0 0 10px;
-        }
-        p {
-            line-height: 1.6;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pulmón Vital | Rehabilitación y Terapia Física en Suba (Bogotá)</title>
+  <meta name="description" content="Atención ambulatoria, domiciliaria y virtual en Suba (Bogotá). Pediátrico y adulto. Higiene bronquial, entrenamiento respiratorio, terapia física, liberación miofascial y reacondicionamiento físico. Agenda por WhatsApp." />
+  <meta name="theme-color" content="#0d9488" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --brand:#0d9488; --brand-700:#0f766e;
+      --bg:#f7fafc; --text:#0f172a; --muted:#475569;
+      --card:#ffffff; --radius:18px; --shadow:0 10px 30px rgba(2,8,23,.08);
+    }
+    *,*:before,*:after{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Helvetica Neue',Arial,'Noto Sans',sans-serif;color:var(--text);background:var(--bg);line-height:1.6}
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1200px,92%);margin-inline:auto}
+    header.site{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.85);backdrop-filter:saturate(160%) blur(10px);border-bottom:1px solid #e2e8f0}
+    header .bar{display:flex;align-items:center;justify-content:space-between;padding:.8rem 0}
+    .logo{display:flex;align-items:center;gap:.6rem;font-weight:800}
+    .logo-mark{width:36px;height:36px;border-radius:12px;background:linear-gradient(120deg,#0d9488 0%,#10b981 45%,#22c55e 100%)}
+    nav a{margin-left:1rem;font-weight:600;color:var(--muted)}
+    nav a:hover{color:var(--brand)}
+    .btn{display:inline-flex;align-items:center;gap:.6rem;padding:.9rem 1.1rem;border-radius:999px;font-weight:600;border:2px solid transparent;transition:.2s ease;cursor:pointer}
+    .btn-primary{background:var(--brand);color:white}.btn-primary:hover{background:var(--brand-700)}
+    .btn-outline{border-color:var(--brand);color:var(--brand);background:transparent}.btn-outline:hover{background:rgba(13,148,136,.08)}
+    .badge{display:inline-flex;align-items:center;gap:.4rem;font-size:.85rem;font-weight:600;color:var(--brand);background:rgba(13,148,136,.08);border:1px solid rgba(13,148,136,.25);padding:.35rem .6rem;border-radius:999px}
+    .hero{padding:clamp(3rem,6vw,6rem) 0}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center}
+    @media (max-width: 900px){.hero-grid{grid-template-columns:1fr}}
+    .hero h1{font-family:Montserrat,Inter,sans-serif;line-height:1.15;letter-spacing:-.02em;font-size:clamp(1.9rem,4.5vw,3.2rem);margin:.2rem 0}
+    .hero p.lead{font-size:clamp(1rem,1.4vw,1.125rem);color:var(--muted);margin:1rem 0 1.5rem}
+    .trust{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.2rem}
+    @media (max-width:800px){.trust{grid-template-columns:1fr}}
+    .trust .pill{background:white;border:1px solid #e2e8f0;border-radius:999px;padding:.6rem .9rem;display:flex;align-items:center;gap:.6rem;box-shadow:var(--shadow)}
+    section{padding:clamp(2.5rem,6vw,4rem) 0}
+    .section-title{font-family:Montserrat,Inter,sans-serif;font-size:clamp(1.4rem,2.5vw,2rem);margin:0 0 1rem}
+    .muted{color:var(--muted)}
+    .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
+    @media (max-width:1000px){.cards{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:640px){.cards{grid-template-columns:1fr}}
+    .card{background:var(--card);border:1px solid #e2e8f0;border-radius:var(--radius);padding:1.2rem;box-shadow:var(--shadow);transition:transform .15s ease, box-shadow .2s ease}
+    .card:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(2,8,23,.12)}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+    @media (max-width:900px){.grid-2{grid-template-columns:1fr}}
+    footer{padding:2rem 0;border-top:1px solid #e2e8f0;color:var(--muted);font-size:.95rem}
+    .wafloat{position:fixed;right:18px;bottom:18px;z-index:50}
+    .wafloat a{display:inline-flex;align-items:center;gap:.6rem;background:#25D366;color:white;padding:.9rem 1.1rem;border-radius:999px;font-weight:700;box-shadow:0 8px 30px rgba(37,211,102,.4)}
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Bienvenido a Pulmón Vital</h1>
-        <p>Guías y recursos para tu salud respiratoria</p>
-    </header>
+  <header class="site">
+    <div class="container bar">
+      <div class="logo" aria-label="Pulmón Vital">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <span>Pulmón Vital</span>
+      </div>
+      <nav aria-label="Principal">
+        <a href="#servicios">Servicios</a>
+        <a href="#diferenciales">Por qué nosotros</a>
+        <a href="#equipo">Equipo</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contacto" class="btn btn-outline">Contacto</a>
+      </nav>
+    </div>
+  </header>
 
-    <section>
-        <h2>Sobre nosotros</h2>
-        <p>Este es un proyecto para ofrecer recursos digitales, guías de ejercicios y recomendaciones para mejorar tu bienestar pulmonar.</p>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="badge">Suba · Ambulatorio, domicilio y virtual</span>
+        <h1>Rehabilitación respiratoria y física que devuelve el aire y la movilidad a tu vida.</h1>
+        <p class="lead">Atención ambulatoria en Suba, a domicilio y virtual. Protocolos seguros y resultados medibles para población pediátrica y adulta.</p>
+        <div class="actions" style="display:flex;gap:.6rem;flex-wrap:wrap">
+          <a class="btn btn-primary" href="https://wa.me/573159203355?text=Hola%20Pulm%C3%B3n%20Vital%2C%20quiero%20agendar%20una%20valoraci%C3%B3n." target="_blank" rel="noopener">Agendar por WhatsApp</a>
+          <a class="btn btn-outline" href="#contacto">Reserva virtual (Meet)</a>
+        </div>
+        <div class="trust">
+          <div class="pill">🏥 Atención ambulatoria</div>
+          <div class="pill">🩺 Atención domiciliaria y virtual</div>
+          <div class="pill">📈 Seguimiento clínico</div>
+        </div>
+      </div>
+      <div>
+        <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=1600&auto=format&fit=crop" alt="Consulta ambulatoria de fisioterapia" loading="lazy" style="border-radius:20px;box-shadow:var(--shadow)">
+      </div>
+    </div>
+  </section>
 
-        <h2>Recursos</h2>
-        <ul>
-            <li>Guías en PDF</li>
-            <li>Ejercicios de respiración</li>
-            <li>Consejos para el manejo del asma</li>
-        </ul>
-    </section>
+  <section id="servicios">
+    <div class="container">
+      <h2 class="section-title">Servicios</h2>
+      <p class="muted">Respira mejor. Muévete con confianza. Vive con autonomía.</p>
+      <div class="cards" role="list">
+        <article class="card" role="listitem">
+          <h3>Pulmón Pediátrico</h3>
+          <p>Evaluación respiratoria, educación a cuidadores, higiene bronquial, tos asistida y entrenamiento seguro. En casa, ambulatorio o virtual.</p>
+        </article>
+        <article class="card" role="listitem">
+          <h3>Pulmón Geriátrico</h3>
+          <p>Reentrenamiento al esfuerzo, manejo de secreciones, prevención de exacerbaciones y caídas. Coordinación con médico tratante.</p>
+        </article>
+        <article class="card" role="listitem">
+          <h3>Rehabilitación Respiratoria (Adultos)</h3>
+          <p>EPOC, asma, bronquiectasias, fibrosis, post-COVID y postoperatorio. Entrenamiento inspiratorio/espiratorio y educación en autocuidado.</p>
+        </article>
+        <article class="card" role="listitem">
+          <h3>Terapia Física</h3>
+          <p>Recupera movilidad y fuerza tras lesiones o cirugías. Programas personalizados con ejercicios terapéuticos.</p>
+        </article>
+        <article class="card" role="listitem">
+          <h3>Liberación Miofascial</h3>
+          <p>Técnicas manuales para reducir tensión muscular, mejorar la circulación y optimizar el movimiento.</p>
+        </article>
+        <article class="card" role="listitem">
+          <h3>Rehabilitación Física</h3>
+          <p>Enfoque integral para restablecer la función física, prevenir recaídas y mejorar la calidad de vida.</p>
+        </article>
+        <article class="card" role="listitem">
+          <h3>+Acondicionamiento Físico</h3>
+          <p>Planes para mejorar resistencia, fuerza y flexibilidad, adaptados a tu condición y objetivos.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-        <p>&copy; 2025 Pulmón Vital - Todos los derechos reservados</p>
-    </footer>
+  <section id="contacto" style="background:#f0fdfa">
+    <div class="container grid-2">
+      <div>
+        <h2 class="section-title">Contacto</h2>
+        <p><strong>WhatsApp:</strong> <a href="https://wa.me/573159203355" target="_blank" rel="noopener">+57 315 920 3355</a></p>
+        <p><strong>Correo:</strong> <a href="mailto:contacto@pulmonvital.co">contacto@pulmonvital.co</a> <em>(opcional)</em></p>
+        <h3 style="margin-top:1.2rem">Agendar cita</h3>
+        <p class="muted">Rellena el formulario y te contactamos por WhatsApp para confirmar.</p>
+        <p><a class="btn btn-outline" href="https://docs.google.com/forms/d/e/1FAIpQLSc_aJxt5HvoZhmRkQ5d5XUMqd-i3p4YeiMt1yaQ1_ykyA6X4A/viewform?usp=header" target="_blank" rel="noopener">Abrir formulario</a></p>
+      </div>
+      <div>
+        <!-- Aquí podrías incrustar el Google Form con iframe si lo deseas -->
+        <!-- <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc_aJxt5HvoZhmRkQ5d5XUMqd-i3p4YeiMt1yaQ1_ykyA6X4A/viewform?embedded=true" width="100%" height="900" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe> -->
+        <img src="https://images.unsplash.com/photo-1585421514738-01798e348b17?q=80&w=1400&auto=format&fit=crop" alt="Atención fisioterapia" loading="lazy" style="border-radius:20px;box-shadow:var(--shadow)">
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap">
+      <div><strong>Pulmón Vital</strong> — “Cuidamos el primer respiro hasta el último”</div>
+      <div>© <span id="year"></span> Pulmón Vital. Todos los derechos reservados.</div>
+    </div>
+  </footer>
+
+  <div class="wafloat">
+    <a href="https://wa.me/573159203355?text=Hola%20Pulm%C3%B3n%20Vital%2C%20quiero%20agendar%20una%20valoraci%C3%B3n." target="_blank" rel="noopener" aria-label="Abrir WhatsApp para agendar">💬 Agendar por WhatsApp</a>
+  </div>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
+
